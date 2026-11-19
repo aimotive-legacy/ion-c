@@ -29,3 +29,6 @@ target_include_directories(ion_events_static
 )
 
 target_link_libraries(ion_events_static ionc)
+
+#install(TARGETS ion_events RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+install(TARGETS ion_events RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})

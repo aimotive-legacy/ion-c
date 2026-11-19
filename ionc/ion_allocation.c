@@ -92,7 +92,8 @@ iERR _ion_strdup(hOWNER owner, iSTRING dst, iSTRING src)
         dst->value = (BYTE *)ion_alloc_with_owner(owner, (is_empty) ? 1 : src->length);
         if (!dst->value) FAILWITH(IERR_NO_MEMORY);
     }
-    memcpy(dst->value, (is_empty) ? "\0" : src->value, (is_empty) ? 1 : src->length);
+    char tempgeci[] = "\0";
+    memcpy(dst->value, (is_empty) ? (BYTE*)&tempgeci : src->value, (is_empty) ? 1 : src->length);
 
     dst->length = src->length;
 

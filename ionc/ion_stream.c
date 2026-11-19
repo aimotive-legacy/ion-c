@@ -1991,7 +1991,7 @@ void _ion_stream_page_release(ION_STREAM_PAGED *paged, ION_PAGE *page )
   page_id = page->_page_id;
   test_page = _ion_index_find(&(paged->_index), &page_id);
   if (test_page == page) {
-    _ion_index_delete(&(paged->_index), &page_id, &test_page);
+    _ion_index_delete(&(paged->_index), &page_id, (void**)&test_page);
     ASSERT(test_page == page);
   }
 

@@ -19,6 +19,9 @@ target_include_directories(ion
             ../../ionc/include
             argtable)
 
+set_target_properties(ion PROPERTIES INSTALL_RPATH "$ORIGIN/../lib/")
+install(TARGETS ion RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+
 target_link_libraries(ion ionc ion_events)
 
 # A static library version of `ion` that does not include a main()
